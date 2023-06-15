@@ -1,12 +1,15 @@
 //logo - alias
 // import logo from "./logo.svg";
 import "./App.css";
+
+//Routing in React
+//npm install react-router-dom@6 and npm audit fix --force
+import { Routes, Route } from "react-router-dom";
+
 //importing components
-import Home from './Components/Home'
-import Class from './Components/Class'
-import State1 from "./Components/State";
-import Gallery from "./Components/StateToggle";
-import Theme from "./Components/Theme";
+import Home from "./Components/Home";
+import Gallery from "./Components/Gallery";
+import Nav from "./Components/Navbar";
 //Component
 function App() {
   //logical - JS
@@ -14,17 +17,11 @@ function App() {
   //UI - eill be given in the return statement - HTML
   return (
     <div>
-      <Theme/>
-      {/* <h1>Welcome to React 18</h1>
-      <h2>Have fun with React</h2>
-      <hr></hr> */}
-      {/* Reuse/Nested the Home Component */}
-      {/* <Home/>
-      <Class/>
-      <hr></hr>
-      <State1/>
-      <hr/> */}
-      <Gallery/>
+      <Nav />
+      <Routes>
+        <Route exact path="Home" element={<Home />} />
+        <Route exact path="Gallery" element={<Gallery />} />
+      </Routes>
     </div>
   );
 }

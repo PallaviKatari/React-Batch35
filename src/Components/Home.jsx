@@ -1,11 +1,18 @@
 import React from "react";
-
+//import of components
+import Theme from "./Theme";
+import State1 from "./State";
+import CardProfile from "./PropCards";
+import { CurrentUser } from "./Props";
 //functional component
 
 function Home() {
   return (
-    <div>
-      <h1>HOME COMPONENT</h1>
+    <div style={{marginLeft:100,marginTop:50}}>
+      <h4>HOME COMPONENT - <CurrentUser/></h4>
+      <Theme/>
+      <CardProfile/>      
+      <State1/>
       <h1>Welcome to Functional Component</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint esse
@@ -13,8 +20,11 @@ function Home() {
         commodi fuga repellendus dicta. Eveniet voluptatem sequi molestiae id
         iste cum.
       </p>
+      <hr/>
       <Home1 />
+      <hr/>
       <Home2 />
+      <hr/>
       <Home3 />
     </div>
   );
