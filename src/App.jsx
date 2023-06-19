@@ -10,6 +10,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./Components/Home";
 import Gallery from "./Components/Gallery";
 import Nav from "./Components/Navbar";
+import Products from "./Components/ProductApi";
 //Component
 function App() {
   //logical - JS
@@ -18,9 +19,11 @@ function App() {
   return (
     <div>
       <Nav />
+      {/* <h1 style={{color:'blue',fontSize:20}}>Inline Style</h1> */}
       <Routes>
         <Route exact path="Home" element={<Home />} />
         <Route exact path="Gallery" element={<Gallery />} />
+        <Route exact path="Products" element={<Products />} />
       </Routes>
     </div>
   );

@@ -2,7 +2,7 @@ import "../Styles/Nav.css";
 //Link -> instead of <a> tag -> SPA - Partial Rendering
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome, faPalette } from "@fortawesome/free-solid-svg-icons";
+import { faHome, faPalette, faShop } from "@fortawesome/free-solid-svg-icons";
 
 export default function Nav() {
   return (
@@ -12,8 +12,9 @@ export default function Nav() {
         role="navigation">
         <div className="p-2">
           <div id="mainNav">
-            <ul className="list-unstyled rounded ms-2">
+            <ul className="list-unstyled rounded ms-2 bg">
               <li>
+                {/* <a href="home"></a> */}
                 <Link className="vlink rounded border-0" to="Home">
                   <FontAwesomeIcon icon={faHome} /> <span>Home</span>
                 </Link>
@@ -21,6 +22,11 @@ export default function Nav() {
               <li>
                 <Link className="vlink rounded border-0" to="Gallery">
                   <FontAwesomeIcon icon={faPalette} /> <span>Gallery</span>
+                </Link>
+              </li>
+              <li>
+                <Link className="vlink rounded border-0" to="Products">
+                  <FontAwesomeIcon icon={faShop} /> <span>Products</span>
                 </Link>
               </li>
             </ul>

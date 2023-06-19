@@ -1,4 +1,6 @@
 //Child Component 
+//spunky-sam
+//https://www.kasandbox.org/programming-images/avatars/spunky-sam.png
 export function getImageUrl1(image) {
   return (
     "https://www.kasandbox.org/programming-images/avatars/" +
@@ -7,20 +9,22 @@ export function getImageUrl1(image) {
   );
 }
 
-//Child Component
+//Child Component - Destructuring of Props
+//First Call - image(name,imageId)->spunky-sam,size=100
 function Avatar({ image, size }) {
   return (
     <span style={{marginLeft:20}}>
     <img
       className="avatar"
       //image property are passed from Profile -> Avatar -> getImageUrl1
-      src={getImageUrl1(image)}
-      alt={image.name}
-      width={size}
-      height={size}
+      src={getImageUrl1(image)} //spunky-sam -> end-result ->https://www.kasandbox.org/programming-images/avatars/spunky-sam.png
+      alt={image.name} //spunky-sam
+      width={size} //100
+      height={size} //100
       style={{marginRight:20}}
     />
-    {image.name}
+    {/* spunky-sam */}
+    {image.name} 
     </span>
   );
 }
@@ -62,6 +66,13 @@ export default function CardProfile() {
         image={{
           name: "marcimus-orange",
           imageId: "marcimus-orange",
+        }}
+      />
+      <Avatar
+        size={50}
+        image={{
+          name: "spunky-sam",
+          imageId: "spunky-sam",
         }}
       />
     </div>

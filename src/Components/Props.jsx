@@ -7,11 +7,15 @@
 // access properties that made it into the parent's tree.
 import { useTime } from "./Theme";
 //Example 1
-function User(props) {
-  return <span>Hello {props.name}!</span>;
+//Functional Component - User - Child Component
+function User(props) { //name="John"
+  //name - property
+  return <span>Hello {props.name}!</span>; //Hello John!
 }
 
+//Functional Component - CurrentUser - Parent Component
 export function CurrentUser() {
+  //User-defined hook created in this application
   const time = useTime();
   return (
     // React Fragments
@@ -24,8 +28,10 @@ export function CurrentUser() {
 }
 
 //Example 2
+//Message - Child Component for CurrentUser
 function Message(props) {
   return (
+    // Welcome back!!! CuurentTime
     <>
       <span>
         {props.msg} @ {props.date}
@@ -37,6 +43,7 @@ function Message(props) {
 //In React, destructuring allows us to pull apart or unpack our props, which lets us access our props and use them in a more readable format.
 //Destructuring for the previous code
 
+//Message1 - Child Component for CurrentUser
 function Message1({ msg, date }) {
   return (
     <>
@@ -69,10 +76,13 @@ export function Avatar({ person, size }) {
   );
 }
 
+//Destructuring Prop - children(default keyword)
 function Card({ children }) {
   return <div className="card">{children}</div>;
 }
 
+//Parent Component - Avatar
+//Card Component is nested in the Profil- Avatar is nested in the Card Component
 export default function Profile() {
   return (
     <Card>

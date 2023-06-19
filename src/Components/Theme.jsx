@@ -24,12 +24,16 @@ export default function Theme() {
     <div style={{ float: "right" ,marginRight:20}}>
       <p>
         <Avatar /> Pick a color:{" "}
+        {/* color-lightcoral when the component is loaded */}
+        {/* <p style={{color:color}}>{color}</p> */}
         <select value={color} onChange={(e) => setColor(e.target.value)}>
           <option value="lightcoral">lightcoral</option>
           <option value="green">green</option>
           <option value="rebeccapurple">rebeccapurple</option>
           <option value="red">red</option>
           <option value="purple">purple</option>
+          <option value="pink">pink</option>
+          <option value="yellow">yellow</option>
         </select>
       </p>
       <Clock color={color} time={time.toLocaleTimeString()} />
@@ -38,6 +42,7 @@ export default function Theme() {
 }
 
 //Applying the theme to the current time
+//Clock - Child Component for Theme Component
 function Clock({ color, time }) {
   return <h1 style={{ color: color }}>{time}</h1>;
 }

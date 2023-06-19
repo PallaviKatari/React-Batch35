@@ -2,6 +2,7 @@ import { useState } from "react";
 import { courseList } from "../data/course.js";
 //importing Profile Component
 import Profile from "./Props.jsx";
+import { CurrentUser } from "./Props.jsx";
 //React FontAwesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLeftLong, faRightLong } from "@fortawesome/free-solid-svg-icons";
@@ -22,8 +23,9 @@ export default function Gallery() {
   }
 
   //Toggle course details
+  //Initial value - false
   function handleMoreClick() {
-    setShowMore(!showMore);
+    setShowMore(!showMore); //true
   }
 
   //index=0
@@ -32,6 +34,7 @@ export default function Gallery() {
 
   return (
     <div style={{ marginLeft: 150, marginTop: 50 }}>
+      <CurrentUser/>
       {/* Next event */}
       <button
         onClick={handleNextClick}
@@ -53,11 +56,11 @@ export default function Gallery() {
         <i>{course.name} </i>
       </h2>
       <h3 className="ms-5">
-        ({index + 1} of {courseList.length})
+        ({index+1} of {courseList.length})
       </h3>
       <button onClick={handleMoreClick} className="btn btn-primary m-5">
         {/* Conditional Rendering */}
-        {showMore ? "Hide" : "Show"} details
+        {showMore ? "Read Less" : "Read more..."}
       </button>
       <br />
       {/* Both the conditions must satisfy */}
