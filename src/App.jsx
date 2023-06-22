@@ -11,11 +11,13 @@ import Home from "./Components/Home";
 import Gallery from "./Components/Gallery";
 import Nav from "./Components/Navbar";
 import Products from "./Components/ProductApi";
+import Sort from "./Components/Sort";
+import LifeCycle from "./Components/LifeCycle";
 //Component
 function App() {
   //logical - JS
 
-  //UI - eill be given in the return statement - HTML
+  //UI - Will be given in the return statement - HTML
   return (
     <div>
       <Nav />
@@ -24,6 +26,8 @@ function App() {
         <Route exact path="Home" element={<Home />} />
         <Route exact path="Gallery" element={<Gallery />} />
         <Route exact path="Products" element={<Products />} />
+        <Route exact path="sort" element={<Sort />} />
+        <Route exact path="lifecycle" element={<LifeCycle />} />
       </Routes>
     </div>
   );

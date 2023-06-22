@@ -1,0 +1,26 @@
+{
+    "users":[
+        {
+            "imageUrl": "https://st2.depositphotos.com/2208684/11079/i/950/depositphotos_110794798-stock-photo-professional-man-standing-at-office.jpg",
+            "id":1,
+            "name":"yamini",
+            "age":20,
+            "city":"cbe"
+        },
+        {
+            "imageUrl": "https://st2.depositphotos.com/2208684/11079/i/950/depositphotos_110794798-stock-photo-professional-man-standing-at-office.jpg",
+            "id":2,
+            "name":"meenu",
+            "age":26,
+            "city":"cbe"
+        },
+        {
+            "imageUrl": "https://st2.depositphotos.com/2208684/11079/i/950/depositphotos_110794798-stock-photo-professional-man-standing-at-office.jpg",
+            "id":3,
+            "name":"ammu",
+            "age":50,
+            "city":"cbe"
+        }
+
+    ]
+}
