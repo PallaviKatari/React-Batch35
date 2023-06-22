@@ -13,6 +13,7 @@ import Nav from "./Components/Navbar";
 import Products from "./Components/ProductApi";
 import Sort from "./Components/Sort";
 import LifeCycle from "./Components/LifeCycle";
+import UserToggle from "./Components/MapJson";
 //Component
 function App() {
   //logical - JS
@@ -28,6 +29,7 @@ function App() {
         <Route exact path="Products" element={<Products />} />
         <Route exact path="sort" element={<Sort />} />
         <Route exact path="lifecycle" element={<LifeCycle />} />
+        <Route exact path="users" element={<UserToggle />} />
       </Routes>
     </div>
   );
