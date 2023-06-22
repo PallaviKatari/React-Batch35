@@ -152,12 +152,15 @@ function UserSearch() {
   }, []);
   return (
     <div className="App">
+      <b>SEARCH USER</b> <br />
+      <br />
       <input
+        className="text text-success btn btn-warning"
         type="text"
-        placeholder="search..."
+        placeholder="Search..."
         onChange={(e) => setSearchTerm(e.target.value)}
       />
-      <div className="row">
+      <div className="row" style={{ marginTop: 50 }}>
         {users
           .filter((val) => {
             if (searchTerm == "") {
