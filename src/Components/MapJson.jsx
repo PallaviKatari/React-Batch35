@@ -5,7 +5,7 @@ function UserToggle() {
   const [selectedUser, setSelectedUser] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:3000/users")
+    fetch("http://localhost:3001/users")
       .then((response) => response.json())
       .then((data) => setUsers(data));
     //   console.log(data)
@@ -62,7 +62,7 @@ function UserFilter() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/users")
+    fetch("http://localhost:3001/users")
       .then((response) => response.json())
       .then((data) => setUsers(data));
     //   console.log(data)
@@ -73,7 +73,7 @@ function UserFilter() {
       <h2>User List - Filter by Name</h2>
       <div className="row">
         {users
-          .filter((user) => user.name.includes("J"))
+          .filter((user) => user.name.includes("D"))
           .map((user) => (
             <div
               className="col col-md-3"
@@ -103,7 +103,7 @@ function UserFilter1() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/users")
+    fetch("http://localhost:3001/users")
       .then((response) => response.json())
       .then((data) => setUsers(data));
     //   console.log(data)
@@ -114,7 +114,7 @@ function UserFilter1() {
       <h2>User List - Filter by Age</h2>
       <div className="row">
         {users
-          .filter((user) => user.age < 30)
+          .filter((user) => user.age > 30)
           .map((user) => (
             <div
               className="col col-md-3"
@@ -145,7 +145,7 @@ function UserSearch() {
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:3000/users")
+    fetch("http://localhost:3001/users")
       .then((response) => response.json())
       .then((data) => setUsers(data));
     //   console.log(data)

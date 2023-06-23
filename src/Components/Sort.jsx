@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
+//Events Component
+import Events from "./Events";
 
 const movies = [
   {
     id: 1,
     name: "Harry Potter",
     country: "UK",
-    collection: 800, 
+    collection: 800,
     releasedOn: 2004,
   },
   {
@@ -17,11 +19,25 @@ const movies = [
   },
   {
     id: 3,
-    name: "Bahubali",
+    name: "Bahubali 1",
     country: "India",
     collection: 650,
     releasedOn: 2015,
   },
+  {
+    id: 4,
+    name: "Bahubali 2",
+    country: "India",
+    collection: 450,
+    releasedOn: 2017,
+  },
+  {
+    id: 6,
+    name: "Beast",
+    country: "India",
+    collection: 550,
+    releasedOn: 2022,
+  }
 ];
 
 function Sort() {
@@ -34,6 +50,7 @@ function Sort() {
         country: "country",
         collection: "collection",
         releasedOn: "releasedOn",
+        name:"name"
       };
       const sortProperty = types[type];
       const sorted = [...movies].sort(
@@ -46,14 +63,15 @@ function Sort() {
   }, [sortType]);
 
   return (
-    <div style={{ marginTop: 100, marginBottom: 100 }}>
-      <select
-        style={{ marginLeft: 150 }}
+    <div style={{ marginTop: 100, marginLeft: 100 }}>
+      <h1>SORT FILTER IN DROPDOWN</h1>
+      <span style={{ marginLeft: 100 }}>Sort Movie :</span> <select        
         onChange={(e) => setSortType(e.target.value)}
         className="btn btn-dark">
         <option value="country">Country</option>
         <option value="collection">Collection</option>
         <option value="releasedOn">Release Date</option>
+        <option value="name">Name</option>
       </select>
 
       {data.map((movie) => (
@@ -73,10 +91,12 @@ function Sort() {
           <div>{`Year of Release: ${movie.releasedOn}`}</div>
         </div>
       ))}
+      <hr />
+      <div style={{ marginTop: 100, marginLeft: 100 }}>
+        <Events />
+      </div>
     </div>
   );
 }
 
 export default Sort;
-
-
