@@ -14,6 +14,11 @@ import Products from "./Components/ProductApi";
 import Sort from "./Components/Sort";
 import LifeCycle from "./Components/LifeCycle";
 import UserToggle from "./Components/MapJson";
+//CRUD
+import UserHome from "./Components/CRUD/UserHome";
+//Axios
+import PersonList from "./Components/Axios";
+
 //Component
 function App() {
   //logical - JS
@@ -30,6 +35,8 @@ function App() {
         <Route exact path="sort" element={<Sort />} />
         <Route exact path="lifecycle" element={<LifeCycle />} />
         <Route exact path="users" element={<UserToggle />} />
+        <Route exact path="crud" element={<UserHome />} />
+        <Route exact path="axios" element={<PersonList />} />
       </Routes>
     </div>
   );
