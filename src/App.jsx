@@ -18,7 +18,10 @@ import UserToggle from "./Components/MapJson";
 import UserHome from "./Components/CRUD/UserHome";
 //Axios
 import PersonList from "./Components/Axios";
-
+//Add to Cart
+import AddToCart from "./Components/AddToCart";
+//React Hooks Usecases
+import ReactHooks from "./Components/ReactHooks";
 //Component
 function App() {
   //logical - JS
@@ -37,6 +40,8 @@ function App() {
         <Route exact path="users" element={<UserToggle />} />
         <Route exact path="crud" element={<UserHome />} />
         <Route exact path="axios" element={<PersonList />} />
+        <Route exact path="cart" element={<AddToCart />} />
+        <Route exact path="hooks" element={<ReactHooks />} />
       </Routes>
     </div>
   );

@@ -2,9 +2,26 @@ import "../Styles/Nav.css";
 //Link -> instead of <a> tag -> SPA - Partial Rendering
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartArrowDown, faDatabase, faHome, faPalette, faRecycle, faShop, faSort, faTable, faUser } from "@fortawesome/free-solid-svg-icons";
+import {
+  faAnchor,
+  faCartArrowDown,
+  faDatabase,
+  faHome,
+  faPalette,
+  faRecycle,
+  faShop,
+  faSort,
+  faTable,
+  faUser,
+} from "@fortawesome/free-solid-svg-icons";
+import { useCart } from "react-use-cart";
 
 export default function Nav() {
+  //Cart totalUniqueItems in Cart
+  const {
+    totalUniqueItems
+  } = useCart();
+  
   return (
     <div>
       <div
@@ -36,7 +53,8 @@ export default function Nav() {
               </li>
               <li>
                 <Link className="vlink rounded border-0" to="lifecycle">
-                  <FontAwesomeIcon icon={faRecycle} /> <span>React Lifecycle</span>
+                  <FontAwesomeIcon icon={faRecycle} />{" "}
+                  <span>React Lifecycle</span>
                 </Link>
               </li>
               <li>
@@ -52,6 +70,18 @@ export default function Nav() {
               <li>
                 <Link className="vlink rounded border-0" to="axios">
                   <FontAwesomeIcon icon={faDatabase} /> <span>Axios</span>
+                </Link>
+              </li>
+              <li>
+                <Link className="vlink rounded border-0" to="cart">
+                  <FontAwesomeIcon icon={faCartArrowDown} /><sup>{totalUniqueItems}</sup>
+                  <span>Cart Demo</span>
+                </Link>
+              </li>
+              <li>
+                <Link className="vlink rounded border-0" to="hooks">
+                  <FontAwesomeIcon icon={faAnchor} />
+                  <span>React Hooks</span>
                 </Link>
               </li>
             </ul>
