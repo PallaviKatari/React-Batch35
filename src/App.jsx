@@ -22,6 +22,15 @@ import PersonList from "./Components/Axios";
 import AddToCart from "./Components/AddToCart";
 //React Hooks Usecases
 import ReactHooks from "./Components/ReactHooks";
+//Render Props
+import RenderProps from "./Components/RenderProps";
+//Higher Order Components
+import TodosItems from "./Components/TodoHOC";
+//Auth Guard
+import LoginPage from "./Components/LoginPage";
+import PrivateRoute from "./Components/PrivateRoute";
+import ProtectedPage from "./Components/ProtectedPage";
+
 //Component
 function App() {
   //logical - JS
@@ -32,16 +41,53 @@ function App() {
       <Nav />
       {/* <h1 style={{color:'blue',fontSize:20}}>Inline Style</h1> */}
       <Routes>
-        <Route exact path="Home" element={<Home />} />
-        <Route exact path="Gallery" element={<Gallery />} />
-        <Route exact path="Products" element={<Products />} />
+        <Route path="/login" element={<LoginPage />} />
+        {/* <Route
+          path="protected"
+          element={
+            <PrivateRoute>
+              <ProtectedPage name={"John"} />
+            </PrivateRoute>
+          }></Route> */}
+        <Route exact path="" element={<Home />} />
+        <Route
+          exact
+          path="Gallery"
+          element={
+            <PrivateRoute>
+              <ProtectedPage name={"John"} />
+              <Gallery />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          exact
+          path="Products"
+          element={
+            <PrivateRoute>
+              <ProtectedPage name={"John"} />
+              <Products />
+            </PrivateRoute>
+          }
+        />
         <Route exact path="sort" element={<Sort />} />
         <Route exact path="lifecycle" element={<LifeCycle />} />
         <Route exact path="users" element={<UserToggle />} />
         <Route exact path="crud" element={<UserHome />} />
         <Route exact path="axios" element={<PersonList />} />
-        <Route exact path="cart" element={<AddToCart />} />
+        <Route
+          exact
+          path="cart"
+          element={
+            <PrivateRoute>
+              <ProtectedPage name={"John"} />
+              <AddToCart />
+            </PrivateRoute>
+          }
+        />
         <Route exact path="hooks" element={<ReactHooks />} />
+        <Route exact path="renderprops" element={<RenderProps />} />
+        <Route exact path="hoc" element={<TodosItems />} />
       </Routes>
     </div>
   );

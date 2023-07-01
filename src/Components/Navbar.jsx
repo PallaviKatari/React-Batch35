@@ -6,7 +6,9 @@ import {
   faAnchor,
   faCartArrowDown,
   faDatabase,
+  faGaugeHigh,
   faHome,
+  faLink,
   faPalette,
   faRecycle,
   faShop,
@@ -18,10 +20,8 @@ import { useCart } from "react-use-cart";
 
 export default function Nav() {
   //Cart totalUniqueItems in Cart
-  const {
-    totalUniqueItems
-  } = useCart();
-  
+  const { totalUniqueItems } = useCart();
+
   return (
     <div>
       <div
@@ -32,7 +32,7 @@ export default function Nav() {
             <ul className="list-unstyled rounded ms-2 bg">
               <li>
                 {/* <a href="home"></a> */}
-                <Link className="vlink rounded border-0" to="Home">
+                <Link className="vlink rounded border-0" to="">
                   <FontAwesomeIcon icon={faHome} /> <span>Home</span>
                 </Link>
               </li>
@@ -74,7 +74,8 @@ export default function Nav() {
               </li>
               <li>
                 <Link className="vlink rounded border-0" to="cart">
-                  <FontAwesomeIcon icon={faCartArrowDown} /><sup>{totalUniqueItems}</sup>
+                  <FontAwesomeIcon icon={faCartArrowDown} />
+                  <sup>{totalUniqueItems}</sup>
                   <span>Cart Demo</span>
                 </Link>
               </li>
@@ -82,6 +83,24 @@ export default function Nav() {
                 <Link className="vlink rounded border-0" to="hooks">
                   <FontAwesomeIcon icon={faAnchor} />
                   <span>React Hooks</span>
+                </Link>
+              </li>
+              <li>
+                <Link className="vlink rounded border-0" to="renderprops">
+                  <FontAwesomeIcon icon={faLink} />
+                  <span>React Props</span>
+                </Link>
+              </li>
+              <li>
+                <Link className="vlink rounded border-0" to="hoc">
+                  <FontAwesomeIcon icon={faGaugeHigh} />
+                  <span>React HOC</span>
+                </Link>
+              </li>
+              <li>
+                <Link className="vlink rounded border-0" to="hoc">
+                  <FontAwesomeIcon icon={faGaugeHigh} />
+                  <span>React HOC</span>
                 </Link>
               </li>
             </ul>

@@ -4,15 +4,18 @@ import Theme from "./Theme";
 import State1 from "./State";
 import CardProfile from "./PropCards";
 import { CurrentUser } from "./Props";
+
 //functional component
 
 function Home() {
   return (
-    <div style={{marginLeft:100,marginTop:50}}>
-      <h4>HOME COMPONENT - <CurrentUser/></h4>
-      <Theme/>
-      <CardProfile/>      
-      <State1/>
+    <div style={{ marginLeft: 100, marginTop: 50 }}>
+      <h4>
+        HOME COMPONENT - <CurrentUser />
+      </h4>
+      <Theme />
+      <CardProfile />
+      <State1 />
       <h1>Welcome to Functional Component</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint esse
@@ -20,11 +23,11 @@ function Home() {
         commodi fuga repellendus dicta. Eveniet voluptatem sequi molestiae id
         iste cum.
       </p>
-      <hr/>
+      <hr />
       <Home1 />
-      <hr/>
+      <hr />
       <Home2 />
-      <hr/>
+      <hr />
       <Home3 />
     </div>
   );

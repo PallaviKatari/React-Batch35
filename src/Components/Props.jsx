@@ -31,7 +31,7 @@ export function CurrentUser() {
 //Message - Child Component for CurrentUser
 function Message(props) {
   return (
-    // Welcome back!!! CuurentTime
+    // Welcome back!!! CurrentTime
     <>
       <span>
         {props.msg} @ {props.date}
