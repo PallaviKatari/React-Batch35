@@ -28,8 +28,8 @@ import RenderProps from "./Components/RenderProps";
 import TodosItems from "./Components/TodoHOC";
 //Auth Guard
 import LoginPage from "./Components/LoginPage";
-import PrivateRoute from "./Components/PrivateRoute";
 import ProtectedPage from "./Components/ProtectedPage";
+import PrivateElement from "./Components/PrivateRoute";
 
 //Component
 function App() {
@@ -54,35 +54,35 @@ function App() {
           exact
           path="Gallery"
           element={
-            <PrivateRoute>
+            <PrivateElement>
               <ProtectedPage name={"John"} />
               <Gallery />
-            </PrivateRoute>
+            </PrivateElement>
           }
         />
         <Route
           exact
           path="Products"
           element={
-            <PrivateRoute>
+            <PrivateElement>
               <ProtectedPage name={"John"} />
               <Products />
-            </PrivateRoute>
+            </PrivateElement>
           }
         />
         <Route exact path="sort" element={<Sort />} />
-        <Route exact path="lifecycle" element={<LifeCycle />} />
-        <Route exact path="users" element={<UserToggle />} />
+        <Route exact path="lifecycle" element={<PrivateElement><ProtectedPage name={"John"} /><LifeCycle/></PrivateElement>} />
+        <Route exact path="users" element={<PrivateElement><ProtectedPage name={"John"} /><UserToggle /></PrivateElement>} />
         <Route exact path="crud" element={<UserHome />} />
         <Route exact path="axios" element={<PersonList />} />
         <Route
           exact
           path="cart"
           element={
-            <PrivateRoute>
+            <PrivateElement>
               <ProtectedPage name={"John"} />
               <AddToCart />
-            </PrivateRoute>
+            </PrivateElement>
           }
         />
         <Route exact path="hooks" element={<ReactHooks />} />

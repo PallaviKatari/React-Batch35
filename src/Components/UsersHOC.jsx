@@ -4,7 +4,7 @@ import Hoc from './Hoc'
 //UserList Component
 const UserList = ({ data }) => {
   let usersList = data.map((item) => {
-    return <div key={item.id}>{item.name}</div>
+    return <div key={item.id}>{item.name}<br/>{item.email}<hr/></div>
   })
   return <div>{usersList}</div>
 }

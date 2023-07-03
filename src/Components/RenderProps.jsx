@@ -248,11 +248,11 @@ class MouseTracker extends Component {
     return (
       <div>
         <h2>Move the mouse.</h2>
-        {/* <Mouse render={mouse => ( //MouseMove
+        <Mouse render={mouse => ( //MouseMove
           <CircularImage mouse={mouse} /> //x,y -> Mouse Component
-        )}/> */}
+        )}/>
         <br />
-        <Mouse1 render={(mouse) => <CircularImage mouse={mouse} />} />
+        {/* <Mouse1 render={(mouse) => <CircularImage mouse={mouse} />} /> */}
         {/* <Mouse2 render={(mouse) => <CircularImage mouse={mouse} />} /> */}
       </div>
     );

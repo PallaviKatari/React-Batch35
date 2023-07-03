@@ -97,12 +97,6 @@ export default function Nav() {
                   <span>React HOC</span>
                 </Link>
               </li>
-              <li>
-                <Link className="vlink rounded border-0" to="hoc">
-                  <FontAwesomeIcon icon={faGaugeHigh} />
-                  <span>React HOC</span>
-                </Link>
-              </li>
             </ul>
           </div>
         </div>
