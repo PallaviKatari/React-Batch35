@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 //npm install react-use-cart
 import { useCart } from "react-use-cart";
 const Swal = require("sweetalert2");
@@ -14,7 +14,8 @@ const Cart = () => {
     emptyCart,
   } = useCart();
 
-  var paymentHandler = null;
+  var paymentHandler="";
+  var paymentHandler1="";
 
   //When testing interactively, use a card number, such as 4242 4242 4242 4242.
   //Enter the card number in the Dashboard or in any payment form.
@@ -23,7 +24,7 @@ const Cart = () => {
   //function makePayment(amount) {
   function makePayment() {
     invokeStripe();
-    paymentHandler = window.StripeCheckout.configure({
+    var paymentHandler1 = window.StripeCheckout.configure({
       key: "pk_test_51Kb7TuSGj6LZeNumr4WWZQlyT0VAdXUwQ0zPIJAmGbnt9MAwXkJ5aIfQOZsCPraDu1L2BxAyRb8jLSF5tB6fL8mO00Yw0HiRYf",
       locale: "auto",
       token: function (stripeToken) {
@@ -43,7 +44,7 @@ const Cart = () => {
         });
       },
     });
-    paymentHandler.open({
+    paymentHandler1.open({
       name: "Course",
       description: "Order Details",
       //amount: amount,
@@ -56,8 +57,8 @@ const Cart = () => {
       script.id = "stripe-script";
       script.type = "text/javascript";
       script.src = "https://checkout.stripe.com/checkout.js";
-      script.onload = () => {
-        paymentHandler = window.StripeCheckout.configure({
+      script.onClick = () => {
+        var paymentHandler1 = window.StripeCheckout.configure({
           key: "pk_test_51Kb7TuSGj6LZeNumr4WWZQlyT0VAdXUwQ0zPIJAmGbnt9MAwXkJ5aIfQOZsCPraDu1L2BxAyRb8jLSF5tB6fL8mO00Yw0HiRYf",
           locale: "auto",
           token: function (stripeToken) {

@@ -5,7 +5,7 @@ function UserToggle() {
   const [selectedUser, setSelectedUser] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:3000/users")
+    fetch("https://react-jsonserver-vercel.vercel.app/users")
       .then((response) => response.json())
       .then((data) => setUsers(data));
     //   console.log(data)
@@ -62,7 +62,7 @@ function UserFilter() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/users")
+    fetch("https://react-jsonserver-vercel.vercel.app/users")
       .then((response) => response.json())
       .then((data) => setUsers(data));
     //   console.log(data)
@@ -103,7 +103,7 @@ function UserFilter1() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/users")
+    fetch("https://react-jsonserver-vercel.vercel.app/users")
       .then((response) => response.json())
       .then((data) => setUsers(data));
     //   console.log(data)
@@ -145,7 +145,7 @@ function UserSearch() {
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:3000/users")
+    fetch("https://react-jsonserver-vercel.vercel.app/users")
       .then((response) => response.json())
       .then((data) => setUsers(data));
     //   console.log(data)
