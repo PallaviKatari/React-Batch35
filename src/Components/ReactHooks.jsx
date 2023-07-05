@@ -159,6 +159,7 @@ function Reference() {
 
 //Root->Parent->Child->Sub-child
 const UserContext = React.createContext();
+//Parent - Provider
 function Context() {
   const [user] = React.useState({ name: "John" });
   return (
@@ -177,11 +178,13 @@ const Main = () => {
   );
 };
 
+//Child - Consumer - useContext()
 const Header = () => {
   const user = React.useContext(UserContext);
   return (
     <>
       <h1>React useContext</h1>
+      {/* name - John  */}
       <h1 style={{ marginTop: 20 }}>Welcome, {user.name}!</h1>
     </>
   );
