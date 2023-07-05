@@ -14,8 +14,7 @@ const Cart = () => {
     emptyCart,
   } = useCart();
 
-  var paymentHandler="";
-  var paymentHandler1="";
+  let paymentHandler="";
 
   //When testing interactively, use a card number, such as 4242 4242 4242 4242.
   //Enter the card number in the Dashboard or in any payment form.
@@ -24,7 +23,7 @@ const Cart = () => {
   //function makePayment(amount) {
   function makePayment() {
     invokeStripe();
-    var paymentHandler1 = window.StripeCheckout.configure({
+  paymentHandler = window.StripeCheckout.configure({
       key: "pk_test_51Kb7TuSGj6LZeNumr4WWZQlyT0VAdXUwQ0zPIJAmGbnt9MAwXkJ5aIfQOZsCPraDu1L2BxAyRb8jLSF5tB6fL8mO00Yw0HiRYf",
       locale: "auto",
       token: function (stripeToken) {
@@ -44,7 +43,7 @@ const Cart = () => {
         });
       },
     });
-    paymentHandler1.open({
+    paymentHandler.open({
       name: "Course",
       description: "Order Details",
       //amount: amount,
@@ -58,7 +57,7 @@ const Cart = () => {
       script.type = "text/javascript";
       script.src = "https://checkout.stripe.com/checkout.js";
       script.onClick = () => {
-        var paymentHandler1 = window.StripeCheckout.configure({
+     paymentHandler = window.StripeCheckout.configure({
           key: "pk_test_51Kb7TuSGj6LZeNumr4WWZQlyT0VAdXUwQ0zPIJAmGbnt9MAwXkJ5aIfQOZsCPraDu1L2BxAyRb8jLSF5tB6fL8mO00Yw0HiRYf",
           locale: "auto",
           token: function (stripeToken) {
