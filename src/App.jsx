@@ -30,6 +30,8 @@ import TodosItems from "./Components/TodoHOC";
 import LoginPage from "./Components/LoginPage";
 import ProtectedPage from "./Components/ProtectedPage";
 import PrivateElement from "./Components/PrivateRoute";
+//Lazy Loading
+import Lazy from "./Components/LazyLoading";
 
 //Component
 function App() {
@@ -88,6 +90,7 @@ function App() {
         <Route exact path="hooks" element={<ReactHooks />} />
         <Route exact path="renderprops" element={<RenderProps />} />
         <Route exact path="hoc" element={<TodosItems />} />
+        <Route exact path="lazy" element={<Lazy />} />
       </Routes>
     </div>
   );

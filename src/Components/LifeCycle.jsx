@@ -145,7 +145,7 @@ export default class LifeCycle extends React.Component {
 }
 
 //SPREAD SYNTAX ...
-function Spreadsyntax() {
+export function Spreadsyntax() {
   const originalImage = {
     src: "https://th.bing.com/th/id/OIP.yNOaibrXZ3bEEC8bfTkJtQHaHa?w=168&h=180&c=7&r=0&o=5&dpr=1.56&pid=1.7",
     alt: "This is a random image",

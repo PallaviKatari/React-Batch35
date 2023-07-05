@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React from "react";
 //npm install react-use-cart
 import { useCart } from "react-use-cart";
 const Swal = require("sweetalert2");

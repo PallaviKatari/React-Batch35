@@ -14,6 +14,7 @@ import {
   faShop,
   faSort,
   faTable,
+  faTruckLoading,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import { useCart } from "react-use-cart";
@@ -95,6 +96,12 @@ export default function Nav() {
                 <Link className="vlink rounded border-0" to="hoc">
                   <FontAwesomeIcon icon={faGaugeHigh} />
                   <span>React HOC</span>
+                </Link>
+              </li>
+              <li>
+                <Link className="vlink rounded border-0" to="lazy">
+                  <FontAwesomeIcon icon={faTruckLoading} />
+                  <span>React Lazy Loading</span>
                 </Link>
               </li>
             </ul>
